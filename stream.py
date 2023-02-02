@@ -6,7 +6,7 @@ import s3fs
 
 access_key_id=st.secrets["AWS_ACCESS_KEY_ID"]
 secret_access_key=st.secrets["AWS_SECRET_ACCESS_KEY"]
-bucket_name = "bucketmoxinator"
+bucket_name = st.secrets["bucket_name"]
 
 s3 = s3fs.S3FileSystem(anon=False)
 
