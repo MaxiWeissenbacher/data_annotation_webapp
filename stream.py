@@ -26,7 +26,8 @@ if group == "Group1":
 else:
     df = pd.read_excel('annotation_batch_2.xlsx')
     df = df[250:]
-    df["Column1"] = df.index.values
+    indexlist = list(range(0,250))
+    df["Column1"] = indexlist
    
 def submit():
     st.session_state.label_list.append(st.session_state.label_input)
