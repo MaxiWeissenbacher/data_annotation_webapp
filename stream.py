@@ -20,10 +20,11 @@ default_groups = groups.index("<select>")
 group = st.selectbox("Please choose the group you have been selected for", groups, index=default_groups)
 
 if group == "Group1":
-    df = pd.read_excel('annotation_batch_1.xlsx')
+    df = pd.read_excel('annotation_batch_2.xlsx')
+    df = df[:250]
 else:
     df = pd.read_excel('annotation_batch_2.xlsx')
-
+    df = df[250:]
    
 def submit():
     st.session_state.label_list.append(st.session_state.label_input)
