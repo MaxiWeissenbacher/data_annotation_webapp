@@ -22,9 +22,11 @@ group = st.selectbox("Please choose the group you have been selected for", group
 if group == "Group1":
     df = pd.read_excel('annotation_batch_2.xlsx')
     df = df[:250]
+    df["Column1"] = df.index.values
 else:
     df = pd.read_excel('annotation_batch_2.xlsx')
     df = df[250:]
+    df["Column1"] = df.index.values
    
 def submit():
     st.session_state.label_list.append(st.session_state.label_input)
