@@ -100,7 +100,6 @@ def form_submit():
 if s3.exists(f"{bucket_name}/{group}_label_list_{prolificid}.csv"):
     with s3.open(f"{bucket_name}/{group}_label_list_{prolificid}.csv",'r') as file:
         df_old = pd.read_csv(file)
-        st.dataframe(df_old)
         df_old.drop(df_old.filter(regex="Unname"),axis=1, inplace=True)
         last_value = df_old.index.values[-1]
         if ((df_old.Label.iloc[last_value] == 'HOF' or df_old.Label.iloc[last_value] == 'NOT' or df_old.Label.iloc[last_value] == 'Not Sure')) == False:
@@ -112,5 +111,4 @@ if s3.exists(f"{bucket_name}/{group}_label_list_{prolificid}.csv"):
         form_submit()
 else:
     df = df
-    st.dataframe(df)
     form_submit()
