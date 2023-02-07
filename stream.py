@@ -15,7 +15,7 @@ st.set_page_config(page_title="Annotation Demo", page_icon="📈")
 st.title('Text Annotation')
 password = st.text_input('Please Enter your Password')
 
-groups = ['<select>',"Group1", "Group2"]
+groups = ['<select>',"Group1", "Group2", "Group3"]
 default_groups = groups.index("<select>")
 group = st.selectbox("Please choose the group you have been selected for", groups, index=default_groups)
 
@@ -23,9 +23,13 @@ if group == "Group1":
     df = pd.read_excel('annotation_batch_2.xlsx')
     df = df[:250]
     df["Column1"] = df.index.values
-else:
+elif group == "Group2":
     df = pd.read_excel('annotation_batch_2.xlsx')
     df = df[250:]
+    indexlist = list(range(0,250))
+    df["Column1"] = indexlist
+else:
+    df = pd.read_excel('annotation_batch_3.xlsx')
     indexlist = list(range(0,250))
     df["Column1"] = indexlist
    
