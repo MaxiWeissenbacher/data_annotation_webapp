@@ -1,5 +1,6 @@
 # data_annotation_webapp
 Annotation App for my masterthesis.
+See Medium blogpost here: https://medium.com/@maxiweisei/create-a-text-annotation-app-for-text-classification-using-streamlit-9577de9a42a0
 
 
 
